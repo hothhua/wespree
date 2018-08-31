@@ -26,6 +26,12 @@ module.exports = {
         "transform-export-extensions",
         "syntax-export-extensions",
       ]
+    },
+    typescript: {
+      // 如果打开，会在IDE报错，而且官方人员也给出说注释掉 
+      // compilerOptions: {
+      //     module: "system"
+      // }
     }
   }
 };
