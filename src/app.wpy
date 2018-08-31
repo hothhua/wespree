@@ -89,7 +89,14 @@ export default class extends wepy.app {
             'downloadFile': 10000
         }
     };
-
+    
+    globalData = {
+        userInfo: null,
+        password:0,
+        username:0,
+        prodApiEndpoint = 'https://ngspree-api.herokuapp.com/'
+    }
+    
     constructor () {
         super();
         this.use('promisify');
