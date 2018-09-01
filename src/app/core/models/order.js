@@ -32,7 +32,7 @@ const Order = {
   display_additional_tax_total: '',
   tax_total: '',
   currency: '',
-  considered_risky: boolean;
+  considered_risky: boolean,
   canceler_id: '',
   total_quantity: '',
   token: '',
