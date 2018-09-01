@@ -1,7 +1,6 @@
 
 
 const Image = {
-
   id: 0,
   position: 0,
   attachment_content_type: '',
