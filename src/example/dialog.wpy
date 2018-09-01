@@ -20,6 +20,7 @@ page{
 
 <script>
     import wepy from 'wepy';
+    import { ProductService } from '@/app/core/services/product.service.js';
 
     export default class Dialog extends wepy.page {
 
@@ -49,6 +50,10 @@ page{
                 if (res.confirm) {
                     console.log('用户点击确定');
                 }
+            },
+
+            async testapi() {
+
             }
         }
     }
