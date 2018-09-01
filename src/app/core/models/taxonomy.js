@@ -4,10 +4,13 @@
  * Public API's http://guides.spreecommerce.org/api/taxonomies.html
  */
 
-import { Taxon } from './taxon';
+//import { Taxon } from './taxon';
 
-export interface Taxonomy {
-  id: number;
-  name: string;
-  root: Taxon;
+const Taxonomy = {
+  id: 0,
+  name: '',
+  root: null //Taxon;
 }
+
+export default Taxonomy;
+
