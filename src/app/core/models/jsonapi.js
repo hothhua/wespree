@@ -1,11 +1,14 @@
 export class CJsonApi {
-  id: string | '';
-  type: string;
-  attributes: Object;
-  relationships: Object;
-  included: Object;
 
-  toModel(): Object {
+  constructor() {
+    this.id = ''
+    this.type = ''
+    this.attributes = null
+    this.relationships = null
+    this.included = null
+  }
+
+  toModel() {
     return {
       id: this.id,
       ...this.attributes,
@@ -19,7 +22,7 @@ export class CJsonApi {
     if (keys.length) {
       keys.forEach(relationKey => {
         const includedRelation = this.included[relationKey];
-        let formatedIncludedRelation: any;
+        let formatedIncludedRelation;
 
         if (this.included[relationKey] instanceof Array) {
           formatedIncludedRelation = [];
@@ -45,3 +48,6 @@ export class CJsonApi {
     return newRelationShips;
   }
 }
+
+export default CJsonApi;
+

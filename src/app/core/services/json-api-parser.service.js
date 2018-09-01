@@ -2,7 +2,7 @@ import { CJsonApi } from './../models/jsonapi';
 
 export class JsonApiParserService {
 
-constructor() { }
+  constructor() { }
 
   parseSingleObj(data): Object {
     return Object.assign(new CJsonApi, data).toModel()
