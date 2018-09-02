@@ -42,7 +42,7 @@ const Order = {
   payments: []//[Payment];
 }
 
-export default Order;
+
 // NOTE: This just mimics the serializer exposed in the API
 // Not sure if it is required, review it in APRIL
 const LightOrder = {
@@ -54,4 +54,7 @@ const LightOrder = {
   shipment_state: ''
 }
 
-export default LightOrder;
+export default  {
+  Order,
+  LightOrder
+}

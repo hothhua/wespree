@@ -12,7 +12,7 @@ page{
         <view class="page__bd">
             <view class="weui-btn-area">
                 <button class="weui-btn" type="default" @tap="openConfirm">Confirm Dialog</button>
-                <button class="weui-btn" type="default" @tap="openAlert">Alert Dialog</button>
+                <button class="weui-btn" type="default" @tap="testapi">Alert Dialog</button>
             </view>
         </view>
     </view>
@@ -20,7 +20,7 @@ page{
 
 <script>
     import wepy from 'wepy';
-    import { ProductService } from '@/app/core/services/product.service.js';
+    import { ProductService } from './../app/core/services/product.service.js';
 
     export default class Dialog extends wepy.page {
 
@@ -53,7 +53,7 @@ page{
             },
 
             async testapi() {
-
+                ProductService.getProducts(1);
             }
         }
     }
