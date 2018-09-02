@@ -93,8 +93,7 @@ export default class extends wepy.app {
     globalData = {
         userInfo: null,
         password:0,
-        username:0,
-        prodApiEndpoint = 'https://ngspree-api.herokuapp.com/'
+        username:0
     }
     
     constructor () {
