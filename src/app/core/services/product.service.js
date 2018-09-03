@@ -1,24 +1,21 @@
-import { JsonApiParserService } from './json-api-parser.service'
-import  { AppDefault } from './../../constants/app-defaults'
+import  JsonApiParserService  from './json-api-parser.service'
+import   AppDefault  from './../../constants/app-defaults'
+import  wxRequest  from './../../utils/wxRequest'
 
-import { wxRequest } from './../utils/wxRequest'
+import  wepy  from 'wepy'
 
-import { wepy } from 'wepy'
-
-export default class ProductService {
-
-    async getProducts(pageNumber) {
-
-        //wepy.request('xxxx').then((d) => console.log(d));
-
+const ProductService = {
+    getProducts: async (pageNumber) => {
+ 
         let apiUrl = AppDefault.prodApiEndpoint + 'api/v1/products?page='+pageNumber+
-        '&per_page=20&data_set=small'
+        '&per_page=20&data_set=small';
 
-        const json = await wxRequest(null, apiUrl);
+        const json = await wxRequest({}, apiUrl);
 
         console.log(json.data);
-
     }
 
-}
+};
+
+export default ProductService;
 

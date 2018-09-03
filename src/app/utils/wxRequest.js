@@ -1,7 +1,7 @@
 import wepy from 'wepy';
 
 const wxRequest = async(params = {}, url) => {
-    tip.loading();
+    //tip.loading();
     let data = params.query || {};
     let res = await wepy.request({
         url: url,
@@ -9,11 +9,9 @@ const wxRequest = async(params = {}, url) => {
         data: data,
         header: { 'Content-Type': 'application/json' },
     });
-    tip.loaded();
+    //tip.loaded();
     return res;
 };
 
 
-module.exports = {
-    wxRequest
-}
+export default wxRequest;

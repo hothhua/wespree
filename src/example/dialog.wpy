@@ -20,8 +20,7 @@ page{
 
 <script>
     import wepy from 'wepy';
-    import { ProductService } from './../app/core/services/product.service.js';
-
+    import  ProductService  from '@/app/core/services/product.service';
     export default class Dialog extends wepy.page {
 
         methods = {
@@ -53,6 +52,9 @@ page{
             },
 
             async testapi() {
+
+                console.log('用户点击确定');
+                console.log(ProductService)
                 ProductService.getProducts(1);
             }
         }
