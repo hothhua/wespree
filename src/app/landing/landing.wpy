@@ -1,0 +1,40 @@
+<template>
+    <view class="container">
+        <lpbanner/>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import LpBannerComponent from '@/app/landing/lpbanner'
+
+export default class LandingComponent extends wepy.page {
+    
+    config = {
+        navigationBarTitleText: '演示商城',
+    }
+    components = {
+        lpbanner: LpBannerComponent
+    }
+    data = {
+    }
+    computed = {
+
+    }
+    methods = {
+
+    }
+    events = {
+
+    }
+
+}
+</script>
+
+
+
+<style lang="less">
+
+
+
+</style>

@@ -1,0 +1,89 @@
+<template>
+    <view class="container">
+        <view class="page-body">
+            <view class="page-section page-section-spacing swiper">
+                <swiper indicator-dots="{{indicatorDots}}"
+                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:for="{{background}}" wx:key="*this">
+                    <swiper-item>
+                        <view class="swiper-item {{item}}"></view>
+                    </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </view>
+</template>
+
+<script>
+
+import wepy from 'wepy'
+export default class LpBannerComponent extends wepy.page {
+    
+
+    data: {
+        background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+        indicatorDots: true,
+        vertical: false,
+        autoplay: false,
+        interval: 2000,
+        duration: 500
+    }
+
+    methods = { 
+        changeIndicatorDots: function (e) {
+            this.setData({
+            indicatorDots: !this.data.indicatorDots
+            })
+        },
+        changeAutoplay: function (e) {
+            this.setData({
+            autoplay: !this.data.autoplay
+            })
+        },
+
+        intervalChange: function (e) {
+            this.setData({
+            interval: e.detail.value
+            })
+        },
+        durationChange: function (e) {
+            this.setData({
+            duration: e.detail.value
+            })
+        }
+    }
+    
+}
+
+</script>
+
+<style lang="less">
+    @import "@/style/weui.less";
+    button{
+    margin-bottom: 30rpx;
+    }
+    button:last-child{
+    margin-bottom: 0;
+    }
+    .page-section-title{
+    padding: 0;
+    }
+    .swiper-item{
+    display: block;
+    height: 150px;
+    }
+    .page-section-title{
+    margin-top: 60rpx;
+    position: relative;
+    }
+    .info{
+    position: absolute;
+    right: 0;
+    color: #353535;
+    font-size: 30rpx;
+    }
+    .page-foot{
+    margin-top: 50rpx;
+    }
+</style>
