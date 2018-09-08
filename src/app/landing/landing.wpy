@@ -2,6 +2,15 @@
     <view class="container">
         <lpbanner/>
     </view>
+    <view class="container">
+       高品质 中价格
+    </view>
+    <view class="">
+        产品列表
+    </view>
+    <view class="">
+    品牌列表
+    </view>
 </template>
 
 <script>

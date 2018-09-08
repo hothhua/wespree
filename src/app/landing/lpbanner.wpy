@@ -6,7 +6,8 @@
                     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
                     <block wx:for="{{background}}" wx:key="*this">
                     <swiper-item>
-                        <view class="swiper-item {{item}}"></view>
+                        <view class="swiper-item {{item}}">
+                        </view>
                     </swiper-item>
                     </block>
                 </swiper>
@@ -26,7 +27,7 @@ export default class LpBannerComponent extends wepy.page {
         background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
         indicatorDots: true,
         vertical: false,
-        autoplay: false,
+        autoplay: true,
         interval: 2000,
         duration: 500
     }
