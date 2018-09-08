@@ -36,7 +36,7 @@ export default class LpBannerComponent extends wepy.page {
 </script>
 
 <style lang="less">
-    
+  
 
     button{
     margin-bottom: 30rpx;
