@@ -18,10 +18,11 @@
 <script>
 
 import wepy from 'wepy'
+
 export default class LpBannerComponent extends wepy.page {
     
 
-    data: {
+    data = {
         background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
         indicatorDots: true,
         vertical: false,
@@ -29,37 +30,14 @@ export default class LpBannerComponent extends wepy.page {
         interval: 2000,
         duration: 500
     }
-
-    methods = { 
-        changeIndicatorDots: function (e) {
-            this.setData({
-            indicatorDots: !this.data.indicatorDots
-            })
-        },
-        changeAutoplay: function (e) {
-            this.setData({
-            autoplay: !this.data.autoplay
-            })
-        },
-
-        intervalChange: function (e) {
-            this.setData({
-            interval: e.detail.value
-            })
-        },
-        durationChange: function (e) {
-            this.setData({
-            duration: e.detail.value
-            })
-        }
-    }
     
 }
 
 </script>
 
 <style lang="less">
-    @import "@/style/weui.less";
+    
+
     button{
     margin-bottom: 30rpx;
     }
