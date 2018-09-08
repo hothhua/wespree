@@ -4,10 +4,10 @@
             <view class="page-section page-section-spacing swiper">
                 <swiper indicator-dots="{{indicatorDots}}"
                     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-                    <block wx:for="{{background}}"  wx:key="key">
+                    <block wx:for="{{landingPageBanner}}" wx:key="key">
                     <swiper-item>
                         <view class="swiper-item {{item.label}}">
-                        <image src="{{item.picUrl}}" class="slide-image"></image>
+                        <image src="{{item.image_link}}" class="slide-image"></image>
                         </view>
                     </swiper-item>
                     </block>
@@ -18,22 +18,35 @@
 </template>
 
 <script>
-
 import wepy from 'wepy'
 
 export default class LpBannerComponent extends wepy.page {
-    
-
     data = {
-        background: [{label:"demo-text-1",picUrl:"https://hubblog-1255630482.cos.ap-guangzhou.myqcloud.com/screenshots/post.png",
-    key:"1"}, 
-        {label:"demo-text-2",picUrl:"",key:"2"}, 
-        {label:"demo-text-3",picUrl:"",key:"3"}],
         indicatorDots: true,
         vertical: false,
         autoplay: true,
         interval: 5000,
-        duration: 1000
+        duration: 1000,
+        landingPageBanner: [
+            {
+              label:"demo-text-1",
+              key:"101",
+              image_link: "https://hubblog-1255630482.cos.ap-guangzhou.myqcloud.com/screenshots/post.png",
+              link_url: ""
+            },
+            {
+              label:"demo-text-2",
+              key:"102",
+              image_link: "",
+              link_url: ''
+            },
+            {
+              label:"demo-text-1",
+              key:"103",
+              image_link: "",
+              link_url: ""
+            }
+        ]
     }
     
 }

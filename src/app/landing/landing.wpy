@@ -2,20 +2,12 @@
     <view class="container">
         <lpbanner/>
     </view>
-    <view class="container">
-       高品质 中价格xcv
-    </view>
-    <view class="">
-        产品列表
-    </view>
-    <view class="">
-    品牌列表
-    </view>
 </template>
 
 <script>
 import wepy from 'wepy'
 import LpBannerComponent from '@/app/landing/lpbanner'
+
 
 export default class LandingComponent extends wepy.page {
     
@@ -43,7 +35,4 @@ export default class LandingComponent extends wepy.page {
 
 
 <style lang="less">
-
-
-
 </style>
