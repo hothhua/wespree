@@ -1,3 +1,99 @@
+
+<script>
+
+import wepy from 'wepy';
+import 'wepy-async-function';
+
+import { setStore } from 'wepy-redux'
+import configStore from '@/app/store'
+
+const store = configStore()
+setStore(store)
+
+
+export default class extends wepy.app {
+
+    config = {
+        'pages': [
+            'example/index',
+            'example/button',
+            'example/list',
+            'example/input',
+            'example/slider',
+            'example/uploader',
+
+            'example/article',
+            'example/badge',
+            'example/flex',
+            'example/footer',
+            'example/gallery',
+            'example/grid',
+            'example/icons',
+            'example/loadmore',
+            'example/panel',
+            'example/preview',
+            'example/progress',
+
+            'example/actionsheet',
+            'example/dialog',
+            'example/msg',
+            'example/msg_fail',
+            'example/msg_success',
+            'example/picker',
+            'example/toast',
+
+            'example/navbar',
+            'example/tabbar',
+
+            'example/searchbar',
+            'app/landing/landing'
+        ],
+        'window': {
+            backgroundTextStyle: 'dark',
+            navigationBarBackgroundColor: '#FFFFFF',
+            navigationBarTitleText: 'WeChat',
+            navigationBarTextStyle: 'black',
+            enablePullDownRefresh: false,
+            backgroundColor: '#EFEFEF'
+        },
+        'tabBar': {
+            "color": "#7A7E83",
+            "selectedColor": "#3cc51f",
+            "borderStyle": "black",
+            "backgroundColor": "#ffffff",
+            "list": [{
+            "pagePath": "example/index",
+            "iconPath": "images/icon_component.png",
+            "selectedIconPath": "images/icon_component_HL.png",
+            "text": "组件"
+            },{
+            "pagePath": "app/landing/landing",
+            "iconPath": "images/icon_API.png",
+            "selectedIconPath": "images/icon_API_HL.png",
+            "text": "接口"
+            }]
+        },
+        'networkTimeout': {
+            'request': 10000,
+            'connectSocket': 10000,
+            'uploadFile': 10000,
+            'downloadFile': 10000
+        }
+    };
+    
+    globalData = {
+        userInfo: null,
+        password:0,
+        username:0
+    }
+    
+    constructor () {
+        super();
+        this.use('promisify');
+        this.use('requestfix');
+    }
+}
+</script>
 <style lang="less">
 @import "./style/weui.less";
 page {
@@ -257,97 +353,3 @@ form{
 }
 
 </style>
-
-<script>
-
-import wepy from 'wepy';
-import 'wepy-async-function';
-
-import { setStore } from 'wepy-redux'
-import configStore from '@/app/store'
-
-
-
-export default class extends wepy.app {
-
-    config = {
-        'pages': [
-            'example/index',
-            'example/button',
-            'example/list',
-            'example/input',
-            'example/slider',
-            'example/uploader',
-
-            'example/article',
-            'example/badge',
-            'example/flex',
-            'example/footer',
-            'example/gallery',
-            'example/grid',
-            'example/icons',
-            'example/loadmore',
-            'example/panel',
-            'example/preview',
-            'example/progress',
-
-            'example/actionsheet',
-            'example/dialog',
-            'example/msg',
-            'example/msg_fail',
-            'example/msg_success',
-            'example/picker',
-            'example/toast',
-
-            'example/navbar',
-            'example/tabbar',
-
-            'example/searchbar',
-            'app/landing/landing'
-        ],
-        'window': {
-            backgroundTextStyle: 'dark',
-            navigationBarBackgroundColor: '#FFFFFF',
-            navigationBarTitleText: 'WeChat',
-            navigationBarTextStyle: 'black',
-            enablePullDownRefresh: false,
-            backgroundColor: '#EFEFEF'
-        },
-        'tabBar': {
-            "color": "#7A7E83",
-            "selectedColor": "#3cc51f",
-            "borderStyle": "black",
-            "backgroundColor": "#ffffff",
-            "list": [{
-            "pagePath": "example/index",
-            "iconPath": "images/icon_component.png",
-            "selectedIconPath": "images/icon_component_HL.png",
-            "text": "组件"
-            },{
-            "pagePath": "app/landing/landing",
-            "iconPath": "images/icon_API.png",
-            "selectedIconPath": "images/icon_API_HL.png",
-            "text": "接口"
-            }]
-        },
-        'networkTimeout': {
-            'request': 10000,
-            'connectSocket': 10000,
-            'uploadFile': 10000,
-            'downloadFile': 10000
-        }
-    };
-    
-    globalData = {
-        userInfo: null,
-        password:0,
-        username:0
-    }
-    
-    constructor () {
-        super();
-        this.use('promisify');
-        this.use('requestfix');
-    }
-}
-</script>

@@ -19,8 +19,28 @@
 
 <script>
 import wepy from 'wepy'
+import { connect } from 'wepy-redux'
+import { INCREMENT, DECREMENT } from '../store/types/counter'
+import { asyncInc } from '../store/actions'
 
-export default class LpBannerComponent extends wepy.page {
+@connect({
+    num (state) {
+      return state.counter.num
+    },
+    asyncNum (state) {
+      return state.counter.asyncNum
+    },
+    sumNum (state) {
+      return state.counter.num + state.counter.asyncNum
+    }
+  }
+  , {
+    incNum: INCREMENT,
+    decNum: DECREMENT,
+    asyncInc
+  })
+
+export default class LpProductListComponent extends wepy.page {
     data = {
         indicatorDots: true,
         vertical: false,
